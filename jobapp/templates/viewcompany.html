@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>User Profiles</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+    }
+
+    body {
+      background-image: url('');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    .navbar {
+      background-color: #000 !important;
+    }
+
+    .navbar-nav .nav-link,
+    .navbar-brand span {
+      color: white !important;
+    }
+
+    main {
+      flex: 1 0 auto;
+    }
+
+    footer {
+      flex-shrink: 0;
+      background-color: #000;
+      color: white;
+      padding: 40px 20px 20px 20px;
+    }
+
+    .footer-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .footer-container div {
+      flex: 1 1 250px;
+    }
+
+    footer h5 {
+      font-weight: bold;
+    }
+
+    footer ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    footer ul li {
+      margin-bottom: 8px;
+    }
+
+    footer a {
+      color: white;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg">
+  <div class="container-fluid">
+    <a class="navbar-brand d-flex align-items-center" href="/">
+      <img src="https://as2.ftcdn.net/v2/jpg/10/04/10/53/1000_F_1004105360_BaJnSx8DNE660NFMoi2GRB4rUPy1lbXr.jpg" alt="MYJOB Logo" width="30" height="30" class="me-2">
+      <span>MYJOB</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
+        <li class="nav-item ms-3">
+          <button onclick="history.back()" class="btn btn-outline-light">← Back</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Main Content -->
+<main class="container mt-5">
+  <div class="row justify-content-center">
+    {% for i in d %}
+    <div class="col-md-4 mb-4 d-flex justify-content-center">
+      <div class="card shadow-sm" style="width: 18rem;">
+        <img src="https://via.placeholder.com/150" class="card-img-top" alt="User Image">
+        <div class="card-body">
+          <h5 class="card-title">{{ i.user.username }}</h5>
+          <p class="card-text">Email: {{ i.user.email }}</p>
+          <a href="/sendmail/{{i.id}}/" class="btn btn-primary">Send Mail</a>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</main>
+
+<!-- Footer -->
+<footer>
+  <div class="container footer-container">
+    <div>
+      <h5>About Us</h5>
+      <p>Your trusted job portal helping job seekers and companies connect efficiently.</p>
+    </div>
+    <div>
+      <h5>Quick Links</h5>
+      <ul>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact Us</a></li>
+        <li><a href="/privacy">Privacy Policy</a></li>
+        <li><a href="/terms">Terms of Service</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Contact Info</h5>
+      <ul>
+        <li>Email: support@jobportal.com</li>
+        <li>Phone: +91 98765 43210</li>
+        <li>Location: Kerala, India</li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-JdJqFWcDml9+Fg4Xc7vQDNzT8pK4CswJl48T2H19q6ymWZyL6JptzHNhGTXj6vE7" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-pzjw8f+ua7Kw1TIq0dXNN6H9Ht0B9J2q6Ql4tUzM5rV/ka3JH5C5h28v4f1vvUdy" crossorigin="anonymous"></script>
+
+</body>
+</html>

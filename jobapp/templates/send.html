@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Let's Talk</title>
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+    }
+
+    .form-container {
+      background-color: rgba(255, 255, 255, 0.97);
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .navbar {
+      background-color: #000 !important;
+    }
+
+    .navbar-nav .nav-link {
+      color: white !important;
+    }
+
+    .navbar-brand span {
+      font-size: 1.5rem;
+      color: white;
+    }
+
+    footer {
+      background-color: #000;
+      color: white;
+      padding: 40px 20px 20px;
+      margin-top: 60px;
+    }
+
+    .footer-container h5 {
+      font-weight: bold;
+    }
+
+    .footer-container ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .footer-container ul li {
+      margin-bottom: 8px;
+    }
+
+    .footer-container a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .footer-container a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg">
+  <div class="container-fluid">
+    <a class="navbar-brand d-flex align-items-center" href="/">
+      <img src="https://as2.ftcdn.net/v2/jpg/10/04/10/53/1000_F_1004105360_BaJnSx8DNE660NFMoi2GRB4rUPy1lbXr.jpg" alt="MYJOB Logo" width="30" height="30" class="me-2">
+      <span>MYJOB</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
+        <li class="nav-item ms-3">
+          <button onclick="history.back()" class="btn btn-outline-light">← Back</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Form Section -->
+<div class="container mt-5">
+  <div class="form-container mx-auto" style="max-width: 600px;">
+    <h2 class="text-center mb-4">Let's Talk</h2>
+    <form action="" method="post">
+      {% csrf_token %}
+      <!-- Company Name -->
+      <div class="mb-3">
+        <label for="companyName" class="form-label">Company Name:</label>
+        <input type="text" value="{{ d.user.username }}" name="company_name" class="form-control" id="companyName" readonly>
+      </div>
+      <!-- Email Field -->
+      <div class="mb-3">
+        <label for="email" class="form-label">To:</label>
+        <input type="text" value="{{ d.user.email }}" name="email" class="form-control" id="email">
+      </div>
+      <!-- Subject Field -->
+      <div class="mb-3">
+        <label for="subject" class="form-label">Subject:</label>
+        <input type="text" name="subject" class="form-control" id="subject" placeholder="Enter subject">
+      </div>
+      <!-- Message Field -->
+      <div class="mb-3">
+        <label for="message" class="form-label">Message:</label>
+        <textarea name="message" class="form-control" id="message" rows="4" placeholder="Enter your message"></textarea>
+      </div>
+      <!-- Submit Button -->
+      <div class="text-center">
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row footer-container">
+      <div class="col-md-4">
+        <h5>About Us</h5>
+        <p>Your trusted job portal helping job seekers and companies connect efficiently.</p>
+      </div>
+      <div class="col-md-4">
+        <h5>Quick Links</h5>
+        <ul>
+          <li><a href="/about">About</a></li>
+          <li><a href="/contact">Contact Us</a></li>
+          <li><a href="/privacy">Privacy Policy</a></li>
+          <li><a href="/terms">Terms of Service</a></li>
+        </ul>
+      </div>
+      <div class="col-md-4">
+        <h5>Contact Info</h5>
+        <ul>
+          <li>Email: support@jobportal.com</li>
+          <li>Phone: +91 98765 43210</li>
+          <li>Location: Kerala, India</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Bootstrap Bundle JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

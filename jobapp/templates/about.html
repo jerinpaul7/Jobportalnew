@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MYJOB - About Us</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: url('https://cdn.pixabay.com/photo/2019/09/05/04/39/dream-job-4453054_1280.jpg') no-repeat center center fixed;
+      background-size: cover;
+      font-family: Arial, sans-serif;
+      color: white;
+    }
+    .navbar {
+      background-color: #000 !important;
+    }
+    .navbar-nav .nav-link {
+      color: white !important;
+    }
+    .content-section {
+      padding: 60px 20px;
+      background-color: rgba(255, 255, 255, 0.9);
+      margin: 30px auto;
+      max-width: 1000px;
+      border-radius: 12px;
+      color: black;
+      text-align: center;
+    }
+    .info-section {
+      padding: 40px 20px;
+    }
+    .info-boxes-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+      margin-top: 40px;
+    }
+    .info-box-container {
+      max-width: 400px;
+      flex: 1;
+      min-height: 400px;
+    }
+    .info-box {
+      background-color: rgba(255, 255, 255, 0.95);
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      margin-bottom: 30px;
+      color: #333;
+      text-align: left;
+      transition: transform 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 350px;
+    }
+    .info-box:hover {
+      transform: translateY(-10px);
+    }
+    .company-logos img {
+      height: 50px;
+      width: auto;
+      margin: 10px;
+      object-fit: contain;
+      background: white;
+      padding: 8px;
+      border-radius: 6px;
+    }
+    .info-box ul {
+      padding-left: 20px;
+      margin-top: 10px;
+    }
+    .info-box ul li {
+      margin-bottom: 10px;
+      list-style-type: disc;
+    }
+    .info-box h3,
+    .info-box h4,
+    .info-box p {
+      text-align: center;
+    }
+    footer {
+      background-color: #000;
+      color: white;
+      padding: 40px 20px 20px 20px;
+      margin-top: 50px;
+    }
+    .footer-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+    .footer-container div {
+      margin-bottom: 20px;
+      max-width: 250px;
+    }
+    footer h5 {
+      font-weight: bold;
+    }
+    footer ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    footer ul li {
+      margin-bottom: 8px;
+    }
+    footer a {
+      color: white;
+      text-decoration: none;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
+    .about-img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+      <a class="navbar-brand d-flex align-items-center" href="/">
+        <img src="https://as2.ftcdn.net/v2/jpg/10/04/10/53/1000_F_1004105360_BaJnSx8DNE660NFMoi2GRB4rUPy1lbXr.jpg" alt="MYJOB Logo" width="30" height="30" class="me-2">
+        <span class="text-white ms-3" style="font-size: 1.5rem;">MYJOB</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+          <li class="nav-item"><a class="nav-link active" href="/about">About</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Login</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="/login/">Candidate</a></li>
+              <li><a class="dropdown-item" href="/clogin/">Company</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Register</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="/register/">Candidate</a></li>
+              <li><a class="dropdown-item" href="/cregister/">Company</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <section class="content-section">
+    <h1>About Us</h1>
+    <p>MYJOB is the premier platform for job seekers and companies alike. We bring you a seamless experience to connect talent with opportunities. Our mission is to help individuals find their dream jobs and help companies hire the best talent.</p>
+    <p>Our platform offers a variety of features including personalized job recommendations, verified employers, and an easy-to-use interface. Join us today to kickstart your career!</p>
+    <img src="https://images.unsplash.com/photo-1698047682091-782b1e5c6536?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Job Seeker" class="about-img" />
+  </section>
+
+
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-container">
+      <div>
+        <h5>About Us</h5>
+        <p>Your trusted job portal helping job seekers and companies connect efficiently.</p>
+      </div>
+      <div>
+        <h5>Quick Links</h5>
+        <ul>
+          <li><a href="/about">About</a></li>
+          <li><a href="/contact">Contact Us</a></li>
+          <li><a href="/privacy">Privacy Policy</a></li>
+          <li><a href="/terms">Terms of Service</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Contact Info</h5>
+        <ul>
+          <li>Email: support@jobportal.com</li>
+          <li>Phone: +91 98765 43210</li>
+          <li>Location: Kerala, India</li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

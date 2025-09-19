@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <style>
+    .card-img-top {
+        height: 250px;
+        width: 100%;
+        object-fit: cover;
+    }
+    body {
+        margin: 0;
+        padding: 0;
+        background: url('https://images.unsplash.com/photo-1698047681432-006d2449c631?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center fixed;
+        background-size: cover;
+        font-family: Arial, sans-serif;
+        color: #fff;
+    }
+    .navbar {
+        background-color: #000 !important;
+    }
+    .navbar-nav .nav-item {
+        margin-right: 1.25rem;
+    }
+    .navbar-nav .nav-link {
+        color: white !important;
+    }
+    .card {
+        background-color: rgba(255, 255, 255, 0.95);
+        color: #000;
+        border: none;
+    }
+    .card-title {
+        font-weight: bold;
+    }
+    footer {
+        background-color: #000;
+        color: white;
+        padding: 40px 20px 20px 20px;
+        margin-top: 50px;
+    }
+    .footer-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    .footer-container div {
+        margin-bottom: 20px;
+        max-width: 250px;
+    }
+    footer h5 {
+        font-weight: bold;
+    }
+    footer ul {
+        list-style: none;
+        padding-left: 0;
+    }
+    footer ul li {
+        margin-bottom: 8px;
+    }
+    footer a {
+        color: white;
+        text-decoration: none;
+    }
+    footer a:hover {
+        text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+      <a class="navbar-brand d-flex align-items-center" href="/">
+        <img src="https://as2.ftcdn.net/v2/jpg/10/04/10/53/1000_F_1004105360_BaJnSx8DNE660NFMoi2GRB4rUPy1lbXr.jpg" alt="MYJOB Logo" width="30" height="30" class="me-2">
+        <span class="text-white ms-3" style="font-size: 1.5rem;">MYJOB</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
+          <li class="nav-item ms-3">
+            <button onclick="history.back()" class="btn btn-outline-light">← Back</button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container mt-5">
+    {% for i in obj %}
+    <div class="card mx-auto mb-4 shadow" style="max-width: 700px;">
+      <div class="card-body text-center">
+        <h1 class="card-title">Welcome</h1>
+        <hr>
+        <h5>Company Name: {{ i.user.username }}</h5>
+        <h5>Email: {{ i.user.email }}</h5>
+      </div>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card h-100">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPkiKDaYcf9sEePxXgpVkjynFBpKlWInjFJQ&s" class="card-img-top" alt="View Jobs">
+          <div class="card-body text-center">
+            <h5 class="card-title">Post Your Jobs</h5>
+            <p class="card-text">Add Vacancies.</p>
+            <a href="/postform/{{ i.id }}" class="btn btn-primary">Post Jobs</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card h-100">
+          <img src="https://www.thebalancemoney.com/thmb/V3ivSUnAeM0hHyGAsn6z5V3MlPM=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-1186821733-8293b36141c947c68f635ae24eecfaa3.jpg" class="card-img-top" alt="Jobs Applied">
+          <div class="card-body text-center">
+            <h5 class="card-title">Applicants Applied</h5>
+            <p class="card-text">Track applicants who applied for.</p>
+            <a href="/viewapplied/{{ i.id }}" class="btn btn-primary">View Applicants List</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card h-100">
+          <img src="https://intileo.com/wp-content/uploads/2024/09/Top-15-IT-Companies-in-India-e1730701766280-768x578.webp" class="card-img-top" alt="Registered Companies">
+          <div class="card-body text-center">
+            <h5 class="card-title">Registered Companies</h5>
+            <p class="card-text">See the list of companies hiring via portal.</p>
+            <a href="/viewcompany/" class="btn btn-primary">View List</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-eMNrd9A6Ynl8vvkPKrj3uRfxvlRAkwAZpbB1j6VBkEKSFELPSVRAT+0PJfcEKg4E" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhG81rKQfBKN4fQgSkKFP6CLcz4z+E3tvkAOQ2zkkjPB26lwFdeDkdKeM7gD" crossorigin="anonymous"></script>
+
+  <footer>
+    <div class="footer-container">
+      <div>
+        <h5>About Us</h5>
+        <p>Your trusted job portal helping job seekers and companies connect efficiently.</p>
+      </div>
+      <div>
+        <h5>Quick Links</h5>
+        <ul>
+          <li><a href="/about">About</a></li>
+          <li><a href="/contact">Contact Us</a></li>
+          <li><a href="/privacy">Privacy Policy</a></li>
+          <li><a href="/terms">Terms of Service</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Contact Info</h5>
+        <ul>
+          <li>Email: support@jobportal.com</li>
+          <li>Phone: +91 98765 43210</li>
+          <li>Location: Kerala, India</li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

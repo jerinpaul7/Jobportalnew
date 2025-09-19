@@ -1,0 +1,239 @@
+<!-- FULL WORKING VERSION OF home.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MYJOB - Home</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: url('https://cdn.pixabay.com/photo/2019/09/05/04/39/dream-job-4453054_1280.jpg') no-repeat center center fixed;
+      background-size: cover;
+      font-family: Arial, sans-serif;
+      color: white;
+    }
+    .navbar {
+      background-color: #000 !important;
+    }
+    .navbar-nav .nav-link {
+      color: white !important;
+    }
+    .content-section {
+      padding: 60px 20px;
+      background-color: rgba(255, 255, 255, 0.9);
+      margin: 30px auto;
+      max-width: 1000px;
+      border-radius: 12px;
+      color: black;
+      text-align: center;
+    }
+    .info-section {
+      padding: 40px 20px;
+    }
+    .info-boxes-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+      margin-top: 40px;
+    }
+    .info-box-container {
+      max-width: 400px;
+      flex: 1;
+      min-height: 400px;
+    }
+    .info-box {
+      background-color: rgba(255, 255, 255, 0.95);
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      margin-bottom: 30px;
+      color: #333;
+      text-align: left;
+      transition: transform 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 350px;
+    }
+    .info-box:hover {
+      transform: translateY(-10px);
+    }
+    .company-logos img {
+      height: 50px;
+      width: auto;
+      margin: 10px;
+      object-fit: contain;
+      background: white;
+      padding: 8px;
+      border-radius: 6px;
+    }
+    .info-box ul {
+      padding-left: 20px;
+      margin-top: 10px;
+    }
+    .info-box ul li {
+      margin-bottom: 10px;
+      list-style-type: disc;
+    }
+    .info-box h3,
+    .info-box h4,
+    .info-box p {
+      text-align: center;
+    }
+    footer {
+      background-color: #000;
+      color: white;
+      padding: 40px 20px 20px 20px;
+      margin-top: 50px;
+    }
+    .footer-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+    .footer-container div {
+      margin-bottom: 20px;
+      max-width: 250px;
+    }
+    footer h5 {
+      font-weight: bold;
+    }
+    footer ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    footer ul li {
+      margin-bottom: 8px;
+    }
+    footer a {
+      color: white;
+      text-decoration: none;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg">
+  <div class="container-fluid">
+    <a class="navbar-brand d-flex align-items-center" href="/">
+      <img src="https://as2.ftcdn.net/v2/jpg/10/04/10/53/1000_F_1004105360_BaJnSx8DNE660NFMoi2GRB4rUPy1lbXr.jpg" alt="MYJOB Logo" width="30" height="30" class="me-2">
+      <span class="text-white ms-3" style="font-size: 1.5rem;">MYJOB</span> <!-- Added margin-left (ms-3) and increased font-size -->
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link active" href="/">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Login</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="/login/">Candidate</a></li>
+            <li><a class="dropdown-item" href="/clogin/">Company</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Register</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="/register/">Candidate</a></li>
+            <li><a class="dropdown-item" href="/cregister/">Company</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  <!-- WELCOME SECTION -->
+  <section class="content-section">
+    <h1>Welcome to MYJOB</h1>
+    <p>Your career starts here. Discover thousands of opportunities to grow, connect, and succeed.</p>
+  </section>
+
+  <!-- INFO BOXES -->
+  <div class="container info-section">
+    <div class="info-boxes-container">
+      <!-- Top Companies -->
+      <div class="info-box-container">
+        <div class="info-box">
+          <h3 class="mb-4">Top Companies Hiring</h3>
+          <div class="d-flex flex-wrap justify-content-center align-items-center company-logos">
+            <img src="https://1000logos.net/wp-content/uploads/2016/10/Amazon-Logo.png" alt="Amazon">
+            <img src="https://1000logos.net/wp-content/uploads/2021/05/Google-logo.png" alt="Google">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Infosys_logo.svg/2560px-Infosys_logo.svg.png" alt="Infosys">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTPAWYqoR1E-YMPwd869I0X2WuToOjTrPXgQ&s" alt="TCS">
+            <img src="https://www.wipro.com/content/dam/nexus/en/brand/images/secondary-logo-400x276.png" alt="Wipro">
+            <img src="https://1000logos.net/wp-content/uploads/2021/09/Cognizant-Logo.jpg" alt="Cognizant">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDH3D_sFxInIWvLdh8-BK-xaKw7YpUcwhDaA&s" alt="Capgemini">
+          </div>
+        </div>
+      </div>
+
+      <!-- Join Us -->
+      <div class="info-box-container">
+        <div class="info-box">
+          <h3 class="mb-4">Join Us Today</h3>
+          <p>Create your profile and start applying. It’s fast, free, and effective!</p>
+          <ul>
+            <li>Free account creation</li>
+            <li>Personalized job recommendations</li>
+            <li>Verified employers only</li>
+            <li>Get noticed by top recruiters</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Why Choose Us -->
+      <div class="info-box-container">
+        <div class="info-box">
+          <h4>Why Choose MYJOB?</h4>
+          <p>We are committed to helping job seekers achieve their dream careers and enabling companies to find the best talent.</p>
+          <ul>
+            <li>Nationwide job listings</li>
+            <li>User friendly Interface</li>
+            <li>Dashboard to track applications and interviews</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-container">
+      <div>
+        <h5>About Us</h5>
+        <p>Your trusted job portal helping jobseekers and companies connect efficiently.</p>
+      </div>
+      <div>
+        <h5>Quick Links</h5>
+        <ul>
+          <li><a href="/about">About</a></li>
+          <li><a href="/contact">Contact Us</a></li>
+          <li><a href="/privacy">Privacy Policy</a></li>
+          <li><a href="/terms">Terms of Service</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Contact Info</h5>
+        <ul>
+          <li>Email: support@jobportal.com</li>
+          <li>Phone: +91 98765 43210</li>
+          <li>Location: Kerala, India</li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
